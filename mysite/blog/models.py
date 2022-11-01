@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 
-# INICIO CAP2
+# INICIO CAP3
 class PublishedManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset()\
