@@ -43,6 +43,12 @@ class PostListView(ListView):
     paginate_by= 3
     template_name= 'blog/post/list.html'
 
+class PostListViewas(ListView):
+    queryset= Post.published.all()
+    context_object_name= 'posts'
+    paginate_by= 3
+    template_name= 'blog/post/listwas.html'
+
 def post_share(request, post_id):
     # Retrieve post by id
     post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
