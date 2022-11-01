@@ -6,6 +6,7 @@ from .forms import EmailPostForm, CommentForm
 from django.core.mail import send_mail
 from django.views.decorators.http import require_POST
 
+#CHAPTER3 
 def post_list(request):
     post_list = Post.published.all()
     paginator=Paginator(post_list,3)
@@ -42,12 +43,6 @@ class PostListView(ListView):
     context_object_name= 'posts'
     paginate_by= 3
     template_name= 'blog/post/list.html'
-
-class PostListViewas(ListView):
-    queryset= Post.published.all()
-    context_object_name= 'posts'
-    paginate_by= 3
-    template_name= 'blog/post/listwas.html'
 
 def post_share(request, post_id):
     # Retrieve post by id
