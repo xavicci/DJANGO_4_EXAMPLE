@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 # INICIO CAP3
 class PublishedManager(models.Manager):
@@ -9,8 +10,9 @@ class PublishedManager(models.Manager):
         return super().get_queryset()\
                       .filter(status=Post.Status.PUBLISHED)
 
-
 class Post(models.Model):
+
+    tags=TaggableManager()
 
     class Status(models.TextChoices):
         DRAFT = 'DF', 'Draft'
@@ -67,4 +69,3 @@ class Comment(models.Model):
         ]
     def __str__(self):
         return f'Comment by {self.name} on {self.post }'
-
