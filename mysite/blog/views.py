@@ -6,7 +6,7 @@ from .forms import EmailPostForm, CommentForm
 from django.core.mail import send_mail
 from django.views.decorators.http import require_POST
 
-#CHAPTER3 
+#CHAPTER3 saludos
 def post_list(request):
     post_list = Post.published.all()
     paginator=Paginator(post_list,3)
