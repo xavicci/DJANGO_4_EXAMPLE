@@ -1,10 +1,9 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-from django.urls import reverse
 from taggit.managers import TaggableManager
 
-# INICIO CAP3
+# INICIO CAP3 rdy
 class PublishedManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset()\
