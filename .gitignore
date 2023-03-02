@@ -1,2 +1,3 @@
 .\my_env
-my_env
+.venv
+mysite/__pycache__
